@@ -13,14 +13,20 @@ h2{
 }
 
 #game-area{
-  height: 800px;
-  width: 600px;
+  height: 300px;
+  width: 500px;
   display : flex;
   flex-direction: column;
   align-items: Center;
   justify-content: center;
   background-color: #614f53;
   font-size: 40px;
+}
+
+#ui{
+  height: 256px;
+  width: 500px;
+  background-color: #e07d92;
 }
 
 div{
