@@ -34,6 +34,11 @@ button{
   font-size: 40px;
 }
 
+a{
+  width: 64px;
+  height: 64px;
+}
+
 #ui{
   height: 256px;
   width: 500px;

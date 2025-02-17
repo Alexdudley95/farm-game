@@ -1,5 +1,4 @@
 //TODO: Add id & values for each tiles
-// add event listeners for each tile
 // if statement for each tile
 // add water search functionality
 // look into implementing Jest
@@ -9,22 +8,23 @@ const test =[
   [0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 3, 0, 0],
+  [0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0]
   ];
 
-import tile from "./app.js";
+import tile from "./tileView.js";
+
 
 for(let i = 0; i < test.length; i++){
   var inner = test[i];
   $('#game-area').append("<div id= " + i +">");
     for(let j = 0; j < inner.length; j++){
-      test[i][j] = new tile($('#' + i));
+      test[i][j] = new tile($('#' + i), ""+ i +"-" +j).initView();
     }
 }
 
 
-console.log(test[0][0].id)
+console.log(test[0][0]);
 
 
 //old code pre MCV

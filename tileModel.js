@@ -1,7 +1,8 @@
 
 class tileModel{
   constructor(id){
-    this.id = 1;
+    this.id = id;
+    this.value = 0;
   }
 
 }

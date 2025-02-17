@@ -1,18 +1,28 @@
 import tileController from './tileController.js';
 
 class tileView{
-  constructor(gameDiv){
+  constructor(gameDiv, id){
     this.tileController = new tileController();
-    this.id = tileController.id;
-    this.tileInner = document.createElement('img');
+    this.tileClickable = document.createElement('a');
+    this.id = id;
+    this.tileController.setId(this.id)
+    console.log(id);
+    this.tileClickable.setAttribute("id", this.id);
+    this.tileClickable.addEventListener('click', () => this.updateView());
     gameDiv.append(this.tileInner);
+    gameDiv.append(this.tileClickable);
   }
 
 
-  updateView() {
-    const{tileInner} = this;
-    tileInner.outerHTML = '<img src="img/dirt.png" width="64" height="64" class="dirt">';
+  initView() {
+    const{tileClickable} = this;
+    tileClickable.innerHTML = '<img src="img/dirt.png" width="64" height="64" class="dirt">';
   }
+
+  updateView(){
+    console.log("Inside updateView");
+  }
+
 
 
 
