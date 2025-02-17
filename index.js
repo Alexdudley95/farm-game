@@ -19,13 +19,13 @@ for(let i = 0; i < test.length; i++){
   var inner = test[i];
   $('#game-area').append("<div id= " + i +">");
     for(let j = 0; j < inner.length; j++){
-      test[i][j] = new tile($('#' + i), ""+ i +"-" +j, test[i][j]).initView(j);
-      console.log(test[i][j]);
+      test[i][j] = new tile($('#' + i), ""+ i +"-" +j, test[i][j]);//.initView(j);
+      test[i][j].initView(j);
     }
 }
 
 
-console.log(test[0][0]);
+console.log(test[0][0].getValue());
 
 
 //old code pre MCV

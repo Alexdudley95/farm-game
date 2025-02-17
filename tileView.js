@@ -1,6 +1,5 @@
 import tileModel from './tileModel.js';
 
-
 class tileView{
   constructor(gameDiv, id, value){
     this.tileModel = new tileModel();
@@ -10,12 +9,11 @@ class tileView{
     this.tileModel.setId(this.id);
     this.tileModel.setValue(this.value);
     this.tileClickable.setAttribute("id", this.id);
-    this.tileClickable.addEventListener('click', () => this.getValue());
+    this.tileClickable.addEventListener('click', () => this.incrementValue());
     //add elements to Div
     gameDiv.append(this.tileClickable);
 
   }
-
 
   initView() {
     const{tileClickable} = this;
@@ -27,22 +25,20 @@ class tileView{
   }
 
   getId(){
-    giveId(() => {
-      console.log(this.tileModel.id);
-    })
-    // return this.tileModel.getId();
+    return this.tileModel.getId();
   }
   getValue(){
-    return console.log(this.tileModel.getValue());
+    console.log(this.tileModel.getValue());
+    console.log(this.tileModel.id);
+    return this.tileModel.getValue();
+  }
+  incrementValue(){
+    let x = this.tileModel.getValue();
+    this.tileModel.setValue(x += 1);
+    this.getValue();
   }
 
-
-
-
 }
 
-function getid(){
-  return tileController.id();
-}
 
 export default tileView

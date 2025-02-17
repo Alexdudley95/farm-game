@@ -7,6 +7,10 @@ class tileController {
 
   }
 
+
+  setId(id){
+    console.log("Egg?");
+  }
 }
 
 
