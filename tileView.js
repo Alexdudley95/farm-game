@@ -1,16 +1,19 @@
-import tileController from './tileController.js';
+import tileModel from './tileModel.js';
+
 
 class tileView{
-  constructor(gameDiv, id){
-    this.tileController = new tileController();
+  constructor(gameDiv, id, value){
+    this.tileModel = new tileModel();
     this.tileClickable = document.createElement('a');
     this.id = id;
-    this.tileController.setId(this.id)
-    console.log(id);
+    this.value = value;
+    this.tileModel.setId(this.id);
+    this.tileModel.setValue(this.value);
     this.tileClickable.setAttribute("id", this.id);
-    this.tileClickable.addEventListener('click', () => this.updateView());
-    gameDiv.append(this.tileInner);
+    this.tileClickable.addEventListener('click', () => this.getValue());
+    //add elements to Div
     gameDiv.append(this.tileClickable);
+
   }
 
 
@@ -20,7 +23,17 @@ class tileView{
   }
 
   updateView(){
-    console.log("Inside updateView");
+    console.log(this.id);
+  }
+
+  getId(){
+    giveId(() => {
+      console.log(this.tileModel.id);
+    })
+    // return this.tileModel.getId();
+  }
+  getValue(){
+    return console.log(this.tileModel.getValue());
   }
 
 
@@ -28,6 +41,8 @@ class tileView{
 
 }
 
-
+function getid(){
+  return tileController.id();
+}
 
 export default tileView

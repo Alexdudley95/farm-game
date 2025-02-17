@@ -7,17 +7,6 @@ class tileController {
 
   }
 
-  setId(id){
-    console.log("HERE" + id)
-
-    this.id = id;
-  }
-
-  // setID(oldId, newId){
-  //   var oldId = this.id;
-  //   this.id = newId;
-  //   return newId;
-  // }
 }
 
 

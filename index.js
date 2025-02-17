@@ -19,7 +19,8 @@ for(let i = 0; i < test.length; i++){
   var inner = test[i];
   $('#game-area').append("<div id= " + i +">");
     for(let j = 0; j < inner.length; j++){
-      test[i][j] = new tile($('#' + i), ""+ i +"-" +j).initView();
+      test[i][j] = new tile($('#' + i), ""+ i +"-" +j, test[i][j]).initView(j);
+      console.log(test[i][j]);
     }
 }
 
