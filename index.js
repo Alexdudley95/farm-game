@@ -1,22 +1,27 @@
-// const test =[
-//   [0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 3, 0, 0],
-//   [0, 0, 0, 0, 0, 0]
-//   ];
+const test =[
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 3, 0, 0],
+  [0, 0, 0, 0, 0, 0]
+  ];
 
-import app from "./app.js";
+import tile from "./app.js";
 
-const gameDiv = $('#game-area');
-new app(gameDiv);
+for(let i = 0; i < test.length; i++){
+  var inner = test[i];
+  $('#game-area').append("<div id= " + i +">");
+    for(let j = 0; j < inner.length; j++){
+      test[i][j] = new tile($('#' + i));
+    }
+}
 
 
+console.log(test[0][0])
 
 
-
-
+//old code pre MCV
 
 // var money = 0;
 
