@@ -1,3 +1,9 @@
+//TODO: Add id & values for each tiles
+// add event listeners for each tile
+// if statement for each tile
+// add water search functionality
+// look into implementing Jest
+
 const test =[
   [0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0],
@@ -18,7 +24,7 @@ for(let i = 0; i < test.length; i++){
 }
 
 
-console.log(test[0][0])
+console.log(test[0][0].id)
 
 
 //old code pre MCV
