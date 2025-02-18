@@ -17,25 +17,36 @@ class tileView{
 
   initView() {
     const{tileClickable} = this;
-    tileClickable.innerHTML = '<img src="img/dirt.png" width="64" height="64" class="dirt">';
+    this.setXY();
+    tileClickable.innerHTML = this.tileModel.setTile(this.value);
   }
 
   updateView(){
-    console.log(this.id);
+    this.tileClickable.innerHTML = this.tileModel.setTile(this.value);
   }
 
   getId(){
     return this.tileModel.getId();
   }
   getValue(){
-    console.log(this.tileModel.getValue());
-    console.log(this.tileModel.id);
     return this.tileModel.getValue();
   }
   incrementValue(){
     let x = this.tileModel.getValue();
     this.tileModel.setValue(x += 1);
-    this.getValue();
+    this.updateView();
+  }
+
+  setValue(value){
+    this.tileModel.setValue(value);
+    this.value = this.tileModel.value;
+    this.updateView();
+  }
+
+  setXY(){
+    this.tileModel.setXY();
+    this.x = this.tileModel.x;
+    this.y = this.tileModel.y;
   }
 
 }

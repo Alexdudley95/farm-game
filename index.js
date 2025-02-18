@@ -3,7 +3,7 @@
 // add water search functionality
 // look into implementing Jest
 
-const test =[
+const tileArray =[
   [0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0],
@@ -15,17 +15,33 @@ const test =[
 import tile from "./tileView.js";
 
 
-for(let i = 0; i < test.length; i++){
-  var inner = test[i];
+for(let i = 0; i < tileArray.length; i++){
+  var inner = tileArray[i];
   $('#game-area').append("<div id= " + i +">");
     for(let j = 0; j < inner.length; j++){
-      test[i][j] = new tile($('#' + i), ""+ i +"-" +j, test[i][j]);//.initView(j);
-      test[i][j].initView(j);
+      tileArray[i][j] = new tile($('#' + i), ""+ i +"-" +j, tileArray[i][j]);//.initView(j);
+      tileArray[i][j].initView(j);
     }
 }
 
 
-console.log(test[0][0].getValue());
+
+function checkSurroundingTiles(array){
+  let x = 1;
+  let y = 0;
+  if((array[0][x - 1].getValue()) == 0 && (array[0][x + 1].getValue()) == 0){
+    console.log("Winner");
+    array[0][x - 1].setValue(3);
+  }else{
+    console.log("False");
+  }
+}
+
+checkSurroundingTiles(tileArray);
+
+$('#ui-button-shovel').click(function(){
+  checkSurroundingTiles(tileArray);
+})
 
 
 //old code pre MCV
@@ -37,12 +53,12 @@ console.log(test[0][0].getValue());
 // var sprout  ='<img src="img/sprout.png" width="64" height="64" class="sprout">';
 // var water   = '<img src="img/water.png" width="64" height="64" class="water">';
 
-// console.log(test.length);
+// console.log(tileArray.length);
 
 
 
-// // for(let i = 0; i < test.length; i++){
-// //   var inner = test[i];
+// // for(let i = 0; i < tileArray.length; i++){
+// //   var inner = tileArray[i];
 // //   $('#game-area').append("<div id=" + i + ">");
 // //     for(let j = 0; j < inner.length; j++){
 // //       $('#' + i).append("<g id='"+ i +"-"+ j +"'>");
@@ -54,22 +70,22 @@ console.log(test[0][0].getValue());
 // function shovelClick(input){
 //   console.log($(input).html());
 //   if($(input).html() == dirt){
-//     test[input] = 1;
+//     tileArray[input] = 1;
 //     updateSprites(input);
 //   }else if($(input).html() == plowed){
-//     test[input] = 0;
+//     tileArray[input] = 0;
 //     updateSprites(input);
-//     console.log(test[input]);
+//     console.log(tileArray[input]);
 //   }
 // }
 
 // function handClick(input){
 //   console.log($(input).html());
 //   if($(input).html() == plowed ){
-//     test[input] = 2;
+//     tileArray[input] = 2;
 //     updateSprites(input);
 //   }else if ($(input).html() == sprout ){
-//     test[input] = 3;
+//     tileArray[input] = 3;
 //     updateSprites(input);
 //   }
 // }
@@ -97,14 +113,14 @@ console.log(test[0][0].getValue());
 // })
 
 // function updateSprites(input){
-//   console.log(test[input]);
-//   if(test[input] == 0){
+//   console.log(tileArray[input]);
+//   if(tileArray[input] == 0){
 //     $(input).html(dirt);
-//   }else if (test[input] == 1){
+//   }else if (tileArray[input] == 1){
 //     $(input).html(plowed);
-//   }else if (test[input] == 2){
+//   }else if (tileArray[input] == 2){
 //     $(input).html(sprout);
-//   }else if(test[input] == 3){
+//   }else if(tileArray[input] == 3){
 //     $(input).html(water);
 //   }
 // }
