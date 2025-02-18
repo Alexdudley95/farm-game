@@ -46,8 +46,8 @@ class tileView{
     this.value = this.tileModel.value;
     this.updateView();
   }
-  isTouchingWater(){
-    this.tileModel.setTouchingWater(1);
+  isTouchingWater(depth){
+    this.tileModel.setTouchingWater(depth);
     this.touchingWater = this.tileModel.touchingWater;
     this.updateView();
     console.log("here")

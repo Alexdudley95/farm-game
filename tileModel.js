@@ -3,6 +3,7 @@ import controller from "./tileController.js"
 
 var dirt  = '<img src="img/dirt.png" width="64" height="64" class="dirt">';
 var plowed  = '<img src="img/plowed.png" width="64" height="64" class="plowed">';
+var plowed2 = '<img src="img/plowed2.png" width="64" height="64" class="plowed">';
 var sprout  ='<img src="img/sprout.png" width="64" height="64" class="sprout">';
 var water   = '<img src="img/water.gif" width="64" height="64" class="water">';
 
@@ -50,6 +51,8 @@ class tileModel{
       return water;
     }else if(this.touchingWater == 1 && this.value == 1){
       return plowed;
+    }else if(this.touchingWater == 2 || this.value ==1){
+      return plowed2;
     }else{
       return dirt;
     }

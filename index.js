@@ -1,5 +1,5 @@
 //TODO:
-//add search for blocks touching
+//add search for blocks touching - in progress
 //add some sort of update loop - perhaps updates after a few seconds
 //add planting functionality and plant life cycle
 
@@ -39,8 +39,9 @@ function initSetup(){
 initSetup();
 
 //check for water
-con.checkSurroundingTiles(tileArray, 3)
-con.checkSurroundingTiles(tileArray, 3)
+con.checkSurroundingTiles(tileArray, 3, 1)
+con.checkSurroundingTiles(tileArray, 3, 1)
+//con.checkSurroundingTiles(tileArray, 1, 2)
 
 
 // $('#ui-button-shovel').click(function(){

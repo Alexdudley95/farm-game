@@ -8,7 +8,7 @@ class tileController {
   }
 
 
-checkSurroundingTiles(tileArray, check){
+checkSurroundingTiles(tileArray, check, depth){
   let comp = 1;
     for(let i = 0; i < tileArray.length; i++){
       let inner = tileArray[i]
@@ -21,8 +21,8 @@ checkSurroundingTiles(tileArray, check){
                   (tileArray[i][j + comp].getValue() == check)||
                   (tileArray[i + comp][j].getValue() == check))
                   {
-                  tileArray[i][j].isTouchingWater();
-                  console.log(tileArray[i][j].touchingWater)
+                  tileArray[i][j].isTouchingWater(depth);
+                  //console.log(tileArray[i][j].touchingWater())
                   }
       }
     }
