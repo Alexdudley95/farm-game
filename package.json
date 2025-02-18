@@ -1,0 +1,18 @@
+{
+  "name": "farm-game",
+  "version": "1.0.0",
+  "description": "--Simple farming game using JS/Jquery, HTML & CSS--",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitest": "^3.0.6"
+  }
+}

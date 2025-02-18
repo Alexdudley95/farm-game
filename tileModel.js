@@ -49,6 +49,8 @@ class tileModel{
       return water;
     }else if(this.touchingWater == 1 && this.value == 1){
       return plowed;
+    }else{
+      return '<img src="img/water.png" width="64" height="64" class="water">';
     }
   }
 }

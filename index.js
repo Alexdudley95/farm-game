@@ -2,11 +2,16 @@
 // add water search functionality
 // look into implementing Jest
 
+export function sum(a, b){
+  return a + b
+}
+
+
 const tileArray =[
   [0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0],
-  [0, 0, 3, 0, 0, 0],
-  [3, 3, 0, 0, 3, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0]
   ];
@@ -28,6 +33,7 @@ function initSetup(){
       }
   }
 }
+
 
 initSetup();
 
