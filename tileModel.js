@@ -1,21 +1,32 @@
 
+import controller from "./tileController.js"
+
 var dirt  = '<img src="img/dirt.png" width="64" height="64" class="dirt">';
 var plowed  = '<img src="img/plowed.png" width="64" height="64" class="plowed">';
 var sprout  ='<img src="img/sprout.png" width="64" height="64" class="sprout">';
-var water   = '<img src="img/water.png" width="64" height="64" class="water">';
+var water   = '<img src="img/water.gif" width="64" height="64" class="water">';
 
 class tileModel{
-  constructor(id){
+  constructor(id, x, y){
     this.id = id;
     this.value = 0;
-    this.x = 0;
-    this.y = 0;
+    this.x = x;
+    this.y = y;
+  }
+  setX(x){
+    this.x = x;
+  }
+  setY(y){
+    this.y = y;
   }
 
   setId(id){
     this.id = id;
   }
   setValue(value){
+    if(value > 3){
+      value = 3
+    }
     this.value = value;
   }
   getId(){
@@ -34,11 +45,6 @@ class tileModel{
     }else if(this.value == 3){
       return water;
     }
-  }
-  setXY(){
-    var i = this.id.split('-');
-    this.x = i[0];
-    this.y = i[1];
   }
 }
 

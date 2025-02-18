@@ -1,11 +1,15 @@
 import tileModel from './tileModel.js';
 
 class tileView{
-  constructor(gameDiv, id, value){
-    this.tileModel = new tileModel();
+  constructor(gameDiv,id, value, x, y){
+    this.tileModel = new tileModel(id, x, y);
     this.tileClickable = document.createElement('a');
-    this.id = id;
     this.value = value;
+    this.id = id;
+    this.x = x;
+    this.y = y;
+    this.tileModel.setX(this.x);
+    this.tileModel.setY(this.y);
     this.tileModel.setId(this.id);
     this.tileModel.setValue(this.value);
     this.tileClickable.setAttribute("id", this.id);
@@ -17,7 +21,6 @@ class tileView{
 
   initView() {
     const{tileClickable} = this;
-    this.setXY();
     tileClickable.innerHTML = this.tileModel.setTile(this.value);
   }
 
@@ -32,8 +35,8 @@ class tileView{
     return this.tileModel.getValue();
   }
   incrementValue(){
-    let x = this.tileModel.getValue();
-    this.tileModel.setValue(x += 1);
+    let z = this.tileModel.getValue();
+    this.tileModel.setValue(z += 1);
     this.updateView();
   }
 
@@ -43,11 +46,6 @@ class tileView{
     this.updateView();
   }
 
-  setXY(){
-    this.tileModel.setXY();
-    this.x = this.tileModel.x;
-    this.y = this.tileModel.y;
-  }
 
 }
 
