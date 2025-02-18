@@ -7,21 +7,27 @@ class tileController {
 
   }
 
-  checkSurroundingTiles(array, y, x){
-    console.log(x + "-" + y);
-    console.log(array)
-    if(y <= 0){
-      console.log("False con 1");
-    }else{
-      if((array[x][y - 1].getValue()) == 0 && (array[x][y + 1].getValue()) == 0){
-        console.log("Winner");
-        array[x][y].setValue(3);
-      }else{
-        console.log("False con 2");
+
+checkSurroundingTiles(tileArray, check){
+  let comp = 1;
+    for(let i = 0; i < tileArray.length; i++){
+      let inner = tileArray[i]
+      for(let j = 0; j < inner.length; j++){
+        if(i <= 0 || i >=5 || j <= 0 || j>= 5){
+          tileArray[i][j].setValue(3);
+          console.log("edge")
+        }else if( (tileArray[i][j - comp].getValue() == check)||
+                  (tileArray[i - comp][j].getValue() == check)||
+                  (tileArray[i][j + comp].getValue() == check)||
+                  (tileArray[i + comp][j].getValue() == check))
+                  {
+                  tileArray[i][j].isTouchingWater();
+                  console.log(tileArray[i][j].touchingWater)
+                  }
       }
     }
 
-  }
+}
 }
 
 

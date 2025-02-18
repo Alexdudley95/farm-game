@@ -8,6 +8,7 @@ class tileView{
     this.id = id;
     this.x = x;
     this.y = y;
+    this.touchingWater = this.tileModel.touchingWater;
     this.tileModel.setX(this.x);
     this.tileModel.setY(this.y);
     this.tileModel.setId(this.id);
@@ -44,6 +45,12 @@ class tileView{
     this.tileModel.setValue(value);
     this.value = this.tileModel.value;
     this.updateView();
+  }
+  isTouchingWater(){
+    this.tileModel.setTouchingWater(1);
+    this.touchingWater = this.tileModel.touchingWater;
+    this.updateView();
+    console.log("here")
   }
 
 

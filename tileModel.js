@@ -12,6 +12,7 @@ class tileModel{
     this.value = 0;
     this.x = x;
     this.y = y;
+    this.touchingWater = 0;
   }
   setX(x){
     this.x = x;
@@ -29,6 +30,10 @@ class tileModel{
     }
     this.value = value;
   }
+  setTouchingWater(value){
+    this.touchingWater = value;
+    console.log(this.touchingWater)
+  }
   getId(){
     return this.id;
   }
@@ -38,12 +43,12 @@ class tileModel{
   setTile(){
     if(this.value == 0){
       return dirt;
-    }else if(this.value == 1){
-      return plowed;
     }else if(this.value == 2){
       return sprout;
     }else if(this.value == 3){
       return water;
+    }else if(this.touchingWater == 1 && this.value == 1){
+      return plowed;
     }
   }
 }
