@@ -32,6 +32,7 @@ class tileModel{
   }
   setTouchingWater(value){
     this.touchingWater = value;
+    this.value = 1;
     console.log(this.touchingWater)
   }
   getId(){
@@ -50,7 +51,7 @@ class tileModel{
     }else if(this.touchingWater == 1 && this.value == 1){
       return plowed;
     }else{
-      return '<img src="img/water.png" width="64" height="64" class="water">';
+      return dirt;
     }
   }
 }

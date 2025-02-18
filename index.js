@@ -1,6 +1,7 @@
 //TODO:
-// add water search functionality
-// look into implementing Jest
+//add search for blocks touching
+//add some sort of update loop - perhaps updates after a few seconds
+//add planting functionality and plant life cycle
 
 export function sum(a, b){
   return a + b
@@ -38,6 +39,7 @@ function initSetup(){
 initSetup();
 
 //check for water
+con.checkSurroundingTiles(tileArray, 3)
 con.checkSurroundingTiles(tileArray, 3)
 
 
