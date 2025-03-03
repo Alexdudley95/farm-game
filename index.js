@@ -35,17 +35,18 @@ function initSetup(){
   }
 }
 
-
 initSetup();
 
 //check for water
-con.checkSurroundingTiles(tileArray, 3, 1)
-con.checkSurroundingTiles(tileArray, 3, 1)
+  con.checkSurroundingTiles(tileArray, 3, 1)
+  con.checkSurroundingTiles(tileArray, 3, 1)
 //con.checkSurroundingTiles(tileArray, 1, 2)
 
 
-// $('#ui-button-shovel').click(function(){
-//   //con.checkSurroundingTiles(tileArray);
-// })
+$('#ui-button-update').click(function(){
+    con.checkSurroundingTiles(tileArray, 1, 2)
+    con.checkSurroundingTiles(tileArray, 3, 1)
+
+})
 
 

@@ -13,6 +13,7 @@ class tileView{
     this.tileModel.setY(this.y);
     this.tileModel.setId(this.id);
     this.tileModel.setValue(this.value);
+    //add event listener
     this.tileClickable.setAttribute("id", this.id);
     this.tileClickable.addEventListener('click', () => this.incrementValue());
     //add elements to Div
@@ -47,10 +48,13 @@ class tileView{
     this.updateView();
   }
   isTouchingWater(depth){
-    this.tileModel.setTouchingWater(depth);
-    this.touchingWater = this.tileModel.touchingWater;
-    this.updateView();
-    console.log("here")
+    if(this.getValue() != 3){
+      this.tileModel.setTouchingWater(depth);
+      this.touchingWater = this.tileModel.touchingWater;
+      this.updateView();
+      console.log("here")
+    }
+
   }
 
 
