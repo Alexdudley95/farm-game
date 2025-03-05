@@ -32,8 +32,10 @@ class tileModel{
     this.value = value;
   }
   setTouchingWater(value){
-    this.touchingWater = value;
-    this.value = 1;
+    if(this.value != 3 && this.touchingWater != 1){
+      this.touchingWater = value;
+      this.value = 1;
+    }
     //console.log(this.touchingWater)
   }
   getId(){
