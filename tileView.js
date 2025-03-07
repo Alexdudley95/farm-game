@@ -1,16 +1,12 @@
 import tileModel from './tileModel.js';
 
 class tileView{
-  constructor(gameDiv,id, value, x, y){
-    this.tileModel = new tileModel(id, x, y);
+  constructor(gameDiv,id, value){
+    this.tileModel = new tileModel(id);
     this.tileClickable = document.createElement('a');
     this.value = value;
     this.id = id;
-    this.x = x;
-    this.y = y;
     this.touchingWater = this.tileModel.touchingWater;
-    this.tileModel.setX(this.x);
-    this.tileModel.setY(this.y);
     this.tileModel.setId(this.id);
     this.tileModel.setValue(this.value);
     //add event listener

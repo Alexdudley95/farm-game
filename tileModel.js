@@ -8,18 +8,10 @@ var sprout  ='<img src="img/sprout.png" width="64" height="64" class="sprout">';
 var water   = '<img src="img/water.gif" width="64" height="64" class="water">';
 
 class tileModel{
-  constructor(id, x, y){
+  constructor(id){
     this.id = id;
     this.value = 0;
-    this.x = x;
-    this.y = y;
     this.touchingWater = 0;
-  }
-  setX(x){
-    this.x = x;
-  }
-  setY(y){
-    this.y = y;
   }
 
   setId(id){

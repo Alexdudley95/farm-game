@@ -6,8 +6,6 @@ class tileController {
 
 
   }
-
-
   //could be a switch case instead of 4 functions
   checkAbove(tileArray, check, i, j, comp){
     if(tileArray[i - comp]?.[j].getValue() == check){
@@ -24,7 +22,7 @@ class tileController {
   checkLeft(tileArray, check, i , j, comp){
     let arr = tileArray?.[i]?.[j - comp];
     if(arr === undefined ){
-
+      return false;
     }else if(arr.getValue() == check){
       return true;
     }
@@ -33,7 +31,7 @@ class tileController {
   checkRight(tileArray, check, i, j, comp){
     let arr = tileArray?.[i]?.[j + comp];
     if(arr === undefined ){
-
+      return false
     }else if(arr.getValue() == check){
       return true;
     }

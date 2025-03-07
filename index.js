@@ -28,8 +28,8 @@ function initSetup(){
     $('#game-area').append("<div id= " + i +">");
       for(let j = 0; j < inner.length; j++){
 
-        tileArray[i][j] = new tile($('#' + i),i + "-" + j ,tileArray[i][j], j, i);
-        //                          ^ Div    , ^ id       , ^ Value       ,^x, ^y
+        tileArray[i][j] = new tile($('#' + i),i + "-" + j ,tileArray[i][j]);
+        //                          ^ Div    , ^ id       , ^ Value
         tileArray[i][j].initView();
       }
   }
