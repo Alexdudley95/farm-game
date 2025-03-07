@@ -7,31 +7,29 @@ class tileController {
 
   }
 
-  IisEquals0(tileArray, check, depth, i , j){
-    let comp = 1;
-    if(tileArray[i + comp][j].getValue() == check){
-          tileArray[i][j].isTouchingWater(depth);
-        }
-  }
-  IisEquals5(tileArray, check, depth, i , j){
-    let comp = 1;
+  checkAbove(tileArray, check, i, j, comp){
     if(tileArray[i - comp][j].getValue() == check){
-          tileArray[i][j].isTouchingWater(depth);
-        }
-  }
-
-  JisEquals0(tileArray, check, depth, i , j){
-    let comp = 1;
-    if(tileArray[i][j + comp].getValue() == check){
-      tileArray[i][j].isTouchingWater(depth);
+      return true;
     }
+    return false;
   }
-
-  JisEquals5(tileArray, check, depth, i , j){
-    let comp = 1
+  checkBelow(tileArray, check, i, j , comp){
+    if(tileArray[i + comp][j].getValue() == check){
+      return true;
+    }
+    return false;
+  }
+  checkLeft(tileArray, check, i , j, comp){
     if(tileArray[i][j - comp].getValue() == check){
-      tileArray[i][j].isTouchingWater(depth);
+      return true;
     }
+    return false;
+  }
+  checkRight(tileArray, check, i, j, comp){
+    if(tileArray[i][j + comp].getValue() == check){
+      return true;
+    }
+    return false;
   }
 
   checkSurroundingTiles(tileArray, check, depth){
@@ -39,22 +37,21 @@ class tileController {
       for(let i = 0; i < tileArray.length; i++){
         let inner = tileArray[i]
         for(let j = 0; j < inner.length; j++){
-          if(i == 0){
-            this.IisEquals0(tileArray, check, depth, i, j);
-          }else if( i == 5){
-            this.IisEquals5(tileArray, check, depth, i, j);
-          }else if(j == 0){
-            this.JisEquals0(tileArray, check, depth, i ,j);
-          }else if(j == 5){
-            this.JisEquals5(tileArray, check, depth, i, j);
-          }else if( (tileArray[i][j - comp].getValue() == check)||
-            (tileArray[i - comp][j].getValue() == check)||
-            (tileArray[i][j + comp].getValue() == check)||
-            (tileArray[i + comp][j].getValue() == check))
-            {
-            tileArray[i][j].isTouchingWater(depth);
-
+          if(i == 0 && j == 0){
+            if((this.checkRight(tileArray, check, i, j, comp) == true) ||
+              (this.checkBelow(tileArray, check, i, j, comp) == true)){
+                tileArray[i][j].isTouchingWater(depth);
+              }
+          }else if( i == 5 && j == 5){
+            if((this.checkLeft(tileArray, check, i, j, comp) == true) ||
+            (this.checkAbove(tileArray, check, i, j, comp) == true)){
+              tileArray[i][j].isTouchingWater(depth);
             }
+          }else if(j == 0){
+
+          }else if(j == 5){
+
+          }
         }
       }
 
